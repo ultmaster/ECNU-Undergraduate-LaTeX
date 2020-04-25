@@ -2,7 +2,7 @@
 % !TEX program = xelatex
 % !BIB program = biber
 
-\def \PrintMode{} %在使用电子版论文时，请将此行注释。在打印纸质论文时，请保持本行命令不被注释，然后打印时选择双面打印即可。
+% \def \PrintMode{} %在使用电子版论文时，请将此行注释。在打印纸质论文时，请保持本行命令不被注释，然后打印时选择双面打印即可。
 
 %用来控制是否启动打印模式的宏，请勿改动。
 \ifx \PrintMode \undefined
@@ -15,7 +15,7 @@
 
 \documentclass[a4paper,\SideMode,UTF8]{article} %A4纸，UTF-8
 
-\input{packages_and_settings.tex} %加载各宏包以及本模板的主要设置
+\usepackage{packages_and_settings} %加载各宏包以及本模板的主要设置
 \addbibresource{./reference/thesis-ref.bib} %加载bib文件（参考文献）
 
 \begin{document}
@@ -60,7 +60,7 @@
 %生成附录
 \phantomsection
 \addtocontents{toc}{\setcounter{tocdepth}{1}}
-\addcontentsline{toc}{section}{附录}
+\addcontentsline{toc}{section}{附 \quad\quad 录}
 \setcounter{subsection}{0}
 \ctexset { subsection = { name={,},number={\arabic{subsection}},format={\rmfamily \zihao {5}} } }
 \ctexset { subparagraph = { name={(,)},number={\arabic{subparagraph}},format={\rmfamily \zihao {5}},indent=2em } }

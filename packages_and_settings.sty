@@ -9,7 +9,7 @@
 \usepackage{caption} %实现图片的多行说明
 \usepackage{float} %图片与表格的更好排版
 \usepackage{ulem} %更好的下划线
-\usepackage[top=2.5cm, bottom=2.0cm, left=3.0cm, right=2.0cm]{geometry} %设置页边距
+\usepackage[top=2.5cm, bottom=2.0cm, left=3.0cm, right=2.5cm]{geometry} %设置页边距
 
 \usepackage{fontspec} %设置字体需要的宏包
 
@@ -65,11 +65,11 @@
 
 %设置各级系统的编号格式
 \setcounter{secnumdepth}{5}
-\ctexset { section = { name={,.},number={\arabic{section}},format={\sffamily \zihao {-4}} } }
-\ctexset { subsection = { name={,},number={\arabic{section}.\arabic{subsection}},format={\sffamily \zihao {-4}} } }
-\ctexset { subsubsection = { name={,},number={\arabic{section}.\arabic{subsection}.\arabic{subsubsection}},format={\sffamily \zihao {-4}},indent=2em } }
-\ctexset { paragraph = { name={,},number={\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}},format={\sffamily \zihao {-4}},indent=4em } }
-\ctexset { subparagraph = { name={,)},number={\arabic{subparagraph}},format={\sffamily \zihao {-4}},indent=6em } }
+\ctexset { section = { name={第,章},number={\chinese{section}},format={\center\bfseries\sffamily\zihao {-3}} } }
+\ctexset { subsection = { name={,},number={\arabic{section}.\arabic{subsection}},format={\bfseries\zihao {-4}},titleformat={\sffamily},numberformat={\rmfamily} } }
+\ctexset { subsubsection = { name={,},number={\arabic{section}.\arabic{subsection}.\arabic{subsubsection}},format={\bfseries\zihao {-4}},titleformat={\sffamily},numberformat={\rmfamily} } }
+\ctexset { paragraph = { name={,},number={\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}},format={\bfseries\zihao {-4}},titleformat={\sffamily},numberformat={\rmfamily} } }
+\ctexset { subparagraph = { name={,)},number={\arabic{subparagraph}},format={\bfseries\zihao {-4}},titleformat={\sffamily},numberformat={\rmfamily} } }
 
 \usepackage[bottom,perpage]{footmisc}               %脚注，显示在每页底部，编号按页重置
 \renewcommand*{\footnotelayout}{\zihao{-5}\rmfamily}  %设置脚注为小五号宋体
@@ -81,8 +81,8 @@
 \chead{}
 \rhead{\TitleCHS}
 \lfoot{}
-\cfoot{\thepage}
-\rfoot{}
+\cfoot{}
+\rfoot{\thepage}
 
 \usepackage{xcolor} %彩色的文字
 
@@ -191,7 +191,7 @@
 
 %设置目录字体
 \usepackage{tocloft}
-\renewcommand{\contentsname}{\centerline{目录}}
+\renewcommand{\contentsname}{\centerline{目 \quad\quad 录}}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\cfttoctitlefont}{\sffamily \bfseries \zihao{-3}}
 \renewcommand{\cftsubsubsecfont}{\rmfamily}
@@ -207,3 +207,12 @@
 \usepackage[absolute,overlay]{textpos}
   \setlength{\TPHorizModule}{1mm}
   \setlength{\TPVertModule}{1mm}
+
+%设置摘要边距
+\makeatletter
+\renewenvironment{abstract}{%
+	\begin{center}%
+		{\bfseries \abstractname\vspace{-1em}\vspace{\z@}}%
+	\end{center}%
+}{}
+\makeatother
