@@ -18,6 +18,28 @@
 \usepackage{packages_and_settings} %加载各宏包以及本模板的主要设置
 \addbibresource{./reference/thesis-ref.bib} %加载bib文件（参考文献）
 
+\def\equationautorefname{式}%
+\def\footnoteautorefname{脚注}%
+\def\itemautorefname{项}%
+\def\figureautorefname{图}%
+\def\tableautorefname{表}%
+\def\partautorefname{篇}%
+\def\appendixautorefname{附录}%
+\def\sectionautorefname{章}%
+\def\subsectionautorefname{小节}%
+\def\subsubsectionautorefname{小节}%
+\def\paragraphautorefname{段落}%
+\def\subparagraphautorefname{子段落}%
+\def\FancyVerbLineautorefname{行}%
+\def\theoremautorefname{定理}%
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\Arch}{\mathcal{A}}
+\newcommand{\Net}{\mathcal{N}}
+\newcommand{\argmin}{\mathop{\arg\min}}
+\newcommand{\concat}{\mathbin\Vert}
+
 \begin{document}
 
 \pagestyle{empty} %不对正文前的各页面使用页眉页脚
@@ -42,13 +64,20 @@
 \pagestyle{fancy} %开始使用页眉页脚
 \setcounter{page}{1} %论文页码从正文开始记数
 
+\captionsetup[figure][bi-second]{name=Figure} %设置图的英文编号前缀
+\captionsetup[table][bi-second]{name=Table} %设置表的英文编号前缀
+
 \input{./body/SectionA.tex} %正文第一章
+\newpage
 \input{./body/SectionB.tex} %正文第二章
+\newpage
 \input{./body/SectionC.tex} %正文第三章
+\newpage
 \input{./body/SectionD.tex} %正文第四章
+\newpage
 \input{./body/SectionE.tex} %正文第五章
 
-\theendnotes %尾注（若没有尾注请将本行删除）
+%\theendnotes %尾注（若没有尾注请将本行删除）
 \ClearPageStyle
 
 %生成参考文献

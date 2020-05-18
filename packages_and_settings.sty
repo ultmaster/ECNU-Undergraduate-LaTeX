@@ -7,9 +7,13 @@
 \usepackage{url} %更好的超链接显示
 \usepackage{array,booktabs} %表格相关的宏包
 \usepackage{caption} %实现图片的多行说明
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{multirow}
 \usepackage{float} %图片与表格的更好排版
 \usepackage{ulem} %更好的下划线
 \usepackage[top=2.5cm, bottom=2.0cm, left=3.0cm, right=2.5cm]{geometry} %设置页边距
+\usepackage{bicaption}
 
 \usepackage{fontspec} %设置字体需要的宏包
 
@@ -47,7 +51,7 @@
 		}
 	}
 }
-
+\setsansfont[Mapping=tex-text]{Times New Roman}
 
 \IfFileExists{zhlineskip.sty}{
 	%Microsoft Word 样式的1.5倍行距（按中易字体计算）
@@ -153,7 +157,7 @@
 \WarningFilter*{biblatex}{Conflicting options.\MessageBreak'eventdate=iso' requires 'seconds=true'.\MessageBreak Setting 'seconds=true'}
 
 %使用biblatex管理文献，输出格式使用gb7714-2015标准，后端为biber
-\usepackage[backend=biber,style=gb7714-2015,hyperref=true]{biblatex}
+\usepackage[backend=biber,style=gb7714-2015,hyperref=true,gbnamefmt=lowercase]{biblatex}
 %将参考文献字体设置为五号
 \renewcommand*{\bibfont}{\zihao{5}}
 
@@ -168,6 +172,7 @@
 \floatname{algorithm}{算法}
 \renewcommand{\algorithmicrequire}{\textbf{输入:}}
 \renewcommand{\algorithmicensure}{\textbf{输出:}}
+\newcommand{\algorithmautorefname}{算法}
 
 %可能会需要在用自然语言描述算法步骤时使用的宏包
 \usepackage{enumitem}
@@ -187,7 +192,7 @@
 \makeatother
 
 %显示 1、2级标题
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
 %设置目录字体
 \usepackage{tocloft}
